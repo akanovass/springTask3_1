@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/mainStatic.html">
+<div class="container" layout:fragment="Frag">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">SURNAME</th>
+            <th scope="col">EXAM</th>
+            <th scope="col">MARK</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student:${studentter}" th:style="${student.exam<50?'color:red; font-weight:bold':''}">
+            <th scope="row" th:text="${student.getId()}"></th>
+            <td th:text="${student.getName()}"></td>
+            <td th:text="${student.getSurname()}"></td>
+            <td th:text="${student.getExam()}"></td>
+            <td th:text="${student.getMark()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>
